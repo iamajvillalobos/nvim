@@ -9,10 +9,16 @@ call minpac#add('tpope/vim-endwise')
 call minpac#add('tpope/vim-eunuch')
 call minpac#add('tpope/vim-projectionist')
 call minpac#add('tpope/vim-rails')
+call minpac#add('tpope/vim-dispatch')
+call minpac#add('radenling/vim-dispatch-neovim')
+call minpac#add('janko-m/vim-test')
 
 " minpac shortcuts
 command! PacUpdate call minpac#update()
 command! PacClean call minpac#clean()
+
+" Leader
+let mapleader = " "
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
@@ -37,3 +43,9 @@ endif
 " Keybindings
 " map Ctrl+P to open fuzzy search
 nnoremap <C-p> :FZF<CR> 
+
+" vim-test mappings
+nnoremap <silent> <Leader>t :TestFile<CR>
+nnoremap <silent> <Leader>s :TestNearest<CR>
+nnoremap <silent> <Leader>a :TestSuite<CR>
+let test#strategy = "dispatch"

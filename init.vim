@@ -13,6 +13,7 @@ call minpac#add('tpope/vim-dispatch')
 call minpac#add('radenling/vim-dispatch-neovim')
 call minpac#add('janko-m/vim-test')
 call minpac#add('w0rp/ale')
+call minpac#add('mhinz/vim-grepper')
 
 " minpac shortcuts
 command! PacUpdate call minpac#update()
@@ -63,3 +64,9 @@ let g:ale_lint_on_save = 1
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_filetype_changed = 0
 
+" vim-grepper settings
+let g:grepper = {}
+let g:grepper.tools = ['rg']
+nnoremap <Leader>* :Grepper -cword -noprompt<CR>
+nmap gs <plug>(GrepperOperator)
+xmap gs <plug>(GrepperOperator)

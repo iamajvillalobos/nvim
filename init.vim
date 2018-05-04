@@ -70,3 +70,13 @@ let g:grepper.tools = ['rg']
 nnoremap <Leader>* :Grepper -cword -noprompt<CR>
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
+
+" terminal mode settings
+if has('nvim')
+  " normal-insert mode like vim in terminal mode
+  tnoremap <Esc> <C-\><C-n>
+  tnoremap <C-v><Esc> <Esc>
+endif
+
+" add a different color for terminal cursor
+highlight! TermCursorNC guibg=red guifg=white ctermbg=1 ctermfg=15

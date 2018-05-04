@@ -12,6 +12,7 @@ call minpac#add('tpope/vim-rails')
 call minpac#add('tpope/vim-dispatch')
 call minpac#add('radenling/vim-dispatch-neovim')
 call minpac#add('janko-m/vim-test')
+call minpac#add('w0rp/ale')
 
 " minpac shortcuts
 command! PacUpdate call minpac#update()
@@ -49,3 +50,16 @@ nnoremap <silent> <Leader>t :TestFile<CR>
 nnoremap <silent> <Leader>s :TestNearest<CR>
 nnoremap <silent> <Leader>a :TestSuite<CR>
 let test#strategy = "dispatch"
+
+" ale mappings
+nmap <silent> [W <Plug>(ale_first)
+nmap <silent> [w <Plug>(ale_previous)
+nmap <silent> ]w <Plug>(ale_next)
+nmap <silent> ]W <Plug>(ale_last)
+
+" ale settings
+let g:ale_lint_on_text_changed = 'never' 
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_filetype_changed = 0
+
